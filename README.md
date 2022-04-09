@@ -13,3 +13,35 @@ cat snap_2500000.json | jq .app_state.wasm.contracts > 2500000_contracts.json
 ```
 
 Once you have contract state in an easy json format you can start using the scripts.
+
+
+## Exctract token balance from JunoSwap
+
+Command
+```
+npm run tokenInPool <state file> <lp token> <swap contract> <token denom> <output file>
+```
+
+Example
+```
+npm run tokenInPool ./2500000_contracts.json juno18ckrreffz9jwmkw84axsvncexfqt7gpgckskk0yy0vzwm9huqkyq6v78xu juno1sg6chmktuhyj4lsrxrrdflem7gsnk4ejv6zkcc4d3vcqulzp55wsf4l4gl ujuno juno_atom.json
+```
+
+Output (truncated)
+```json
+{
+    "balances": [
+        {
+            "address": "juno1000fwt3k6p3m55sdk0aeut4wmnhnpcus9zxddr",
+            "balance": 2679752,
+            "tokenInPool": 1819833.7270461952
+        },
+        {
+            "address": "juno1004hu5jffyaskl24a4rlxcrexl4zevlssgdx8p",
+            "balance": 374315,
+            "tokenInPool": 254199.29215065297
+        }
+    ],
+    "total": 472385654736
+}
+```
