@@ -3,7 +3,7 @@
 Set of toolings to simplify extracting data from JunoSwap Liquidity Pools and facilitate the creation of airdrops. 
 
 
-## Preparing snapshot
+## Preparing snapshot
 
 Data can be decoded from a state-export of any Cosmos Chain with CosmWasm module enabled and it has been tested on Juno. Since full state exports are ofter too large to be read easily from javascript we need to extract only the parts we need first. To do so you can use the follwing commands as an example
 
@@ -30,6 +30,7 @@ npm run tokenInPool ./2500000_contracts.json juno18ckrreffz9jwmkw84axsvncexfqt7g
 Output (truncated)
 ```json
 {
+    "total": 472385654736,
     "balances": [
         {
             "address": "juno1000fwt3k6p3m55sdk0aeut4wmnhnpcus9zxddr",
@@ -41,7 +42,6 @@ Output (truncated)
             "balance": 374315,
             "tokenInPool": 254199.29215065297
         }
-    ],
-    "total": 472385654736
+    ]
 }
 ```

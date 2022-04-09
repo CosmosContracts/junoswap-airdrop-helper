@@ -38,7 +38,7 @@ let getBalancesFromCW20State = (contract_state) => {
         }
     })
 
-    return {balances, total};
+    return {total, balances};
 }
 
 // Function that get reserve of a token inside the liquidity pool
@@ -61,6 +61,7 @@ let calculatePoolShares = (lpt_data, reserve) => {
         // Calculate pool share
         var tokenInPool = (bal.balance * reserve) / lpt_data.total;
         bal.tokenInPool = tokenInPool
+        bal.poolShare = ((100 * bal.balance) / lpt_data.total).toFixed(12)
     }
 
     return lpt_data
