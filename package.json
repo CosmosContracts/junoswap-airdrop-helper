@@ -1,0 +1,21 @@
+{
+  "name": "raw",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "dependencies": {
+    "@cosmjs/cosmwasm-stargate": "^0.28.1",
+    "@cosmjs/encoding": "^0.28.1",
+    "@cosmjs/stargate": "^0.28.1",
+    "cosmjs-types": "^0.4.1"
+  },
+  "type": "module",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "decode": "node main.js",
+    "tokenInPool": "node tokenInPool.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
