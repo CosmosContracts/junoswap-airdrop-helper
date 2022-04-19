@@ -15,7 +15,7 @@ cat snap_2500000.json | jq .app_state.wasm.contracts > 2500000_contracts.json
 Once you have contract state in an easy json format you can start using the scripts.
 
 
-## Exctract token balance from JunoSwap
+## Extract token balance from JunoSwap
 
 Command
 ```
