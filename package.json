@@ -15,7 +15,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "decode": "node main.js",
     "tokenInPool": "node tokenInPool.js",
-    "osmosis": "node osmosisCalculator.js"
+    "juno-lp": "node junoLpCalculator.js",
+    "osmosis": "node osmosisCalculator.js",
+    "juno-stakers": "node junoStakersCalculator.js",
+    "export-airdrop": "node export-airdrop.js"
   },
   "author": "",
   "license": "ISC"
