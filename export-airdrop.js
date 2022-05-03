@@ -1,6 +1,9 @@
 import { readFile } from 'fs/promises';
-
 import * as fs from "fs"
+
+const CUSTODIAL_ADDRESSES = [
+    "juno1aeh8gqu9wr4u8ev6edlgfq03rcy6v5twfn0ja8", // CCN
+ ]
 
 let allocateProportionally = async (fileName, tokenToAllocate) => {
     var balances = [];
@@ -19,6 +22,13 @@ let allocateProportionally = async (fileName, tokenToAllocate) => {
     for (var account of input.balances) {
         // Calculate how much airdrop
         // amount input : total input = x ; tokenToAllocate
+
+        if (account.address === "juno1jv65s3grqf6v6jl3dp4t6c9t9rk99cd83d88wr") {
+            console.log("pisello")
+            console.log(account)
+            console.log(tokenToAllocate)
+            console.log(input)
+        }
 
         balances.push({
             address: account.address,
@@ -62,11 +72,19 @@ var main = async () => {
                 var points = await allocateProportionally(`./output/juno_lp/${snap.id}.json`, snap.points)
 
                 for (var point of points) {
-                    var currentPoints = totalPoints.find((el) => el.address == point.address);
+                    var addr = point.address;
+
+
+                    // Send to community pool custodial addresses
+                    if (CUSTODIAL_ADDRESSES.indexOf(addr) !== -1) {
+                        addr = "juno1jv65s3grqf6v6jl3dp4t6c9t9rk99cd83d88wr"
+                    }
+
+                    var currentPoints = totalPoints.find((el) => el.address == addr);
 
                     if (currentPoints === undefined) {
                         totalPoints.push({
-                            address: point.address,
+                            address: addr,
                             amount: parseFloat(point.amount)
                         })
                     } else {

@@ -7,6 +7,7 @@
     "@cosmjs/cosmwasm-stargate": "^0.28.1",
     "@cosmjs/encoding": "^0.28.1",
     "@cosmjs/stargate": "^0.28.1",
+    "bech32": "^2.0.0",
     "cosmjs-types": "^0.4.1"
   },
   "type": "module",
@@ -18,7 +19,8 @@
     "juno-lp": "node junoLpCalculator.js",
     "osmosis": "node osmosisCalculator.js",
     "juno-stakers": "node junoStakersCalculator.js",
-    "export-airdrop": "node export-airdrop.js"
+    "export-airdrop": "node export-airdrop.js",
+    "aggregate-airdrop": "node aggregateAirdrop.js"
   },
   "author": "",
   "license": "ISC"
